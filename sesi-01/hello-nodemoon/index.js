@@ -1,0 +1,1 @@
+console.log("helo dunia tipu-tipu");
