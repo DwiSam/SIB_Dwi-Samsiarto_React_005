@@ -1,6 +1,14 @@
 import { Card, Row, Col } from "react-bootstrap"
+import React, {useState} from 'react'
 
-function MeetUp() {
+function MeetUp(props) {
+
+  const [getBtnUSValue, setBtnUSValue] = useState("")
+
+  const changeBtnUSValue = () => {
+    setBtnUSValue("Joined");
+  }
+
   return (
     <Row className="mt-3">
       <Col md="{12}">
@@ -25,9 +33,9 @@ function MeetUp() {
                     <Col className="col-2">Organizers</Col>
                     <Col className="col-7">Adhy Wiranata</Col>
                   </Row>
-                  <button className="btn btn-secondary mt-2 col-sm-2">
-                    Join Us
-                  </button>
+                  <button onClick={()=>changeBtnUSValue()} className="btn btn-secondary mt-2 col-sm-2">
+                  {!getBtnUSValue ? "Join Us" : getBtnUSValue}
+                  </button>{' '}
                 </div>
               </Col>
             </Row>
