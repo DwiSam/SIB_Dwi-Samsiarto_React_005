@@ -1,6 +1,6 @@
 import { Row, Col, Card } from "react-bootstrap"
 
-function AboutMeetUp() {
+export default function AboutMeetups({ value, hastag}) {
   return (
     <Row className="mt-3">
       <Col md="{12}">
@@ -9,10 +9,9 @@ function AboutMeetUp() {
             <h3>About MeetUp</h3>
             <hr />
             <p>
-              Come and meet other developers interested in the JavaScript and
-              it's library in the Greater Jakarta area.
+              {value}
               <br />
-              Twitter: @JakartaJS and we use the hashtag #jakartajs
+              {hastag}
             </p>
           </Card.Body>
         </Card>
@@ -20,5 +19,3 @@ function AboutMeetUp() {
     </Row>
   )
 }
-
-export default AboutMeetUp

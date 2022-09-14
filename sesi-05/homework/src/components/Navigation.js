@@ -22,7 +22,7 @@ function Navigation() {
                 as={Link} 
                 to="/create-meetup" 
                 className={isActiveMeetUp =>
-                    "nav-link" + (!isRedirect === "/create-meetup" ? " active" : "")
+                    "nav-link nav-link" + (!isRedirect === "/create-meetup" ? " active" : "")
                 }
             >
               Create Meetup
@@ -31,7 +31,7 @@ function Navigation() {
                 as={Link} 
                 to="/explore" 
                 className={isActiveExplore =>
-                "nav-link" + (!isRedirect === "/explore" ? " active" : "")
+                "nav-link nav-link" + (!isRedirect === "/explore" ? " active" : "")
                 }
             >
               Explore

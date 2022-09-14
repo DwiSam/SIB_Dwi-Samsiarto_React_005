@@ -1,6 +1,6 @@
 import { Row, Col, Card } from "react-bootstrap"
 
-function NextMeetUp() {
+export default function NextMeetups({ title, date, value}) {
   return (
     <Row className="mt-3">
       <Col md="{12}">
@@ -10,29 +10,10 @@ function NextMeetUp() {
               <h3>Next MeetUp</h3>
               <hr />
               <div className="bg-light p-3">
-                <p className="lead">Awesome meetup and event</p>
-                <div className="fw-lighter my-3">25 January 2019</div>
+                <p className="lead">{title}</p>
+                <div className="fw-lighter my-3">{date}</div>
                 <p style={{ wordSpacing: "2px" }}>
-                  Hello, JavaScript & Node.js Ninjas!
-                  <br />
-                  Get ready for our montly meetup JakartaJS! This will be our
-                  fifth meetup of 2018!
-                  <br />
-                  The meetup format will contain some short stories and
-                  technical talks.
-                  <br />
-                  If you have a short announcement you'd like to share with the
-                  audience, you may do so during open mic announcement.
-                  <br />
-                  <br />
-                  Remember to bring a photo ID to get through building security.
-                </p>
-                <hr className="dot-line" />
-                <p>
-                  See you there!
-                  <br />
-                  Best, Hengki, Giovanni, Sofian, Riza, Agung The JakartaJS
-                  Organizers.
+                  {value}
                 </p>
               </div>
             </div>
@@ -42,5 +23,3 @@ function NextMeetUp() {
     </Row>
   )
 }
-
-export default NextMeetUp
