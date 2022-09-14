@@ -7,13 +7,17 @@ import {
 	Tr,
 	Th,
 	Td,
-	TableCaption,
 	TableContainer,
-	Flex
+	Flex,
+	Stack,
+	InputGroup,
+	InputLeftAddon,
+	Input,
+	InputRightAddon
   } from '@chakra-ui/react'
 
-function ExchangeRate (props) {
-    const [base, setBase] = useState([]);
+export default function ErrorPage(props) {
+  const [base, setBase] = useState([]);
 	const [currencies, setCurrencies] = useState([]);
 	const [identifier, setIdentifier] = useState(1);
 	const [loading, setLoading] = useState(false);
@@ -63,22 +67,23 @@ function ExchangeRate (props) {
 	}, [identifier])
 
     return (
-		<Flex direction="column" justifyContent='center' textAlign='center'>
-				<h1 className='text-center'>Display Currency Rates</h1>
-				<div className="form-control pb-10">
-					<label className="label">
-						<span className="label-text">Enter amount</span>
-					</label>
-					<label className="input-group">
-						<input type="text" className="input input-bordered" name='identifier' value={identifier} onChange={(e) => setIdentifier(e.target.value)}/>
-						<span>{base}</span>
-					</label>
-				</div>
+		<Flex direction="column" justifyContent='center' textAlign='center' margin='15px'>
+			<h1 className='text-center' padding='10px'>Display Currency Rates</h1>
+				<Stack spacing={4}>
+					<InputGroup padding='30px'>
+						<InputLeftAddon children='Enter amount' />
+						<Input 
+							name='identifier' 
+							value={identifier} onChange={(e) => setIdentifier(e.target.value)} 
+							placeholder='$12' 
+						/>
+						<InputRightAddon children={base} />
+					</InputGroup>
+				</Stack>
 				{
 					loading ? <div>Loading .... </div> :
 					<TableContainer>
 						<Table variant='striped' colorScheme='teal'>
-						<TableCaption>Imperial to metric conversion factors</TableCaption>
 							<Thead>
 								<Tr>
 									<Th>Currency</Th>
@@ -111,5 +116,3 @@ function ExchangeRate (props) {
 		</Flex>
 	);
 }
-
-export default ExchangeRate
