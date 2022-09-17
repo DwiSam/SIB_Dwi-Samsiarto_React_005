@@ -1,60 +1,45 @@
-import './App.css';
-import Users from './Statefull Component/User';
-import Counter from './Hooks - Usetate/Counter';
-import Example from './Hooks - Usetate/Example';
-import Movie from './Stateless Component/Movie';
+import "./App.css";
+import Example from "./components/UseEffect";
+import Counter from "./components/UseState";
 
-
-function Header(){
-  return(
-    <header className='header'>
+function Header() {
+  return (
+    <div className="header">
       <h1>My First React App</h1>
-    </header>
-  )
-
+    </div>
+  );
 }
-
-function Content(){
-  return(
-    <div className='content'>
+function Content() {
+  return (
+    <div className="content">
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium
+        ex, veniam voluptatem aliquam esse repellat ipsa at ut aspernatur?
+        Reiciendis!
       </p>
     </div>
-  )
-
+  );
 }
-
-function Footer(){
-  return(
-    <div className='footer'>
-      <p>&copy; My self - 2021</p>
+function Footer() {
+  return (
+    <div className="footer">
+      <p>&copy; My self - 2022</p>
     </div>
-  )
+  );
 }
 
 function App() {
-  const movieProps = {
-    title : "Naruto",
-    year : 2000, 
-    rating: "10/10",
-    sypnosis: "bocil kekuatan siluman menyelamatkan dunia "
-  }
-
   return (
-    <div className="App">
-         <Header/>
-        <hr/>
-        <Content/>
-        <Users/> 
-        <Counter initialCount={1}/>
-        <Example/>
-        <Movie />
-  
-        <hr/>
-        <Footer/> 
-      
-
+    <div className="container">
+      <Header />
+      <hr />
+      <Content />
+      <hr />
+      <Footer />
+      <hr />
+      <Counter />
+      <hr />
+      <Example />
     </div>
   );
 }
