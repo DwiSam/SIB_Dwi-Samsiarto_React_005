@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/DwiSam/SIB_Dwi-Samsiarto_React_005/tree/main/sesi-13/hello-testing",
   "name": "hello-testing",
   "version": "0.1.0",
   "private": true,
@@ -16,8 +17,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d deploy",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
